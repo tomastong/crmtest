@@ -11,9 +11,14 @@ import './plugins/element.js';
 
 import axios from '@/utils/axios';
 import 'normalize.css';
+import '@/assets/fonts/font-awesome.min.css';
 import '@/assets/css/global.less';
 
 Vue.config.productionTip = false;
+Vue.config.errorHandler = function (err, vm, info) {
+    console.log(`Error: ${err.toString()}
+Info: ${info}`);
+};
 
 Vue.use(axios);
 new Vue({

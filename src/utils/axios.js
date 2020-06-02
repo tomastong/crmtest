@@ -6,7 +6,6 @@
 import axios from 'axios';
 import qs from 'qs';
 import {Message as message} from 'element-ui';
-import store from '@/store';
 import bus from './bus';
 
 // 默认配置
@@ -22,16 +21,13 @@ let instance = axios.create({
 
 // 定义拦截器
 instance.interceptors.request.use(config => {
-    // if (store.login.token) {
-    // if (window.localStorage.getItem('access-token')) {
-    // 初始化请求
-    // instance.defaults.headers.Authorization = window.localStorage.getItem('access-token');
-    // instance.defaults.headers.Authorization = thisstore.login.user.token;
-    // }
+    const token = window.localStorage.getItem('token');
+    if (token) {
+        config.headers.common.Authorization = token;
+    }
+
     return config;
-}, error => {
-    return Promise.reject(error);
-});
+}, error => Promise.reject(error));
 instance.interceptors.response.use(response => {
     const code = response.data && +response.data.code;
     if (code) {
@@ -80,6 +76,7 @@ let request = options => new Promise((resolve, reject) => {
         if (+result.code === 0) {
             return resolve(result);
         }
+
         return reject(result);
     }).catch(error => {
         reject(error);

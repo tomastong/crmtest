@@ -1,0 +1,13 @@
+/**
+ * @file 重新定义字体文件
+ * @author donghongytan
+ * @date 2020-06-02
+ */
+
+@font-face {
+    font-family: "ALIHYAIHEI";
+    font-weight: 700;
+    font-style: normal;
+
+    src: url(ALIHYAIHEI.TTF);
+}
