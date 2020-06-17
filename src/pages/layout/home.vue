@@ -32,7 +32,8 @@ export default {
   },
   computed: {
     ...mapState({
-      path: state => state.system.path
+      path: state => state.system.path,
+      user: state => state.login.user
     })
   },
   components: {
@@ -45,9 +46,26 @@ export default {
       this.$store.dispatch("login/setToken", "");
       this.$store.dispatch("login/setRouter", "");
       this.$store.dispatch("system/setPath", "");
+    },
+    judgeLogin() {
+      if (!Object.keys(this.user).length) {
+        this.$router.push({ path: "/login" });
+        return;
+      }
+      this.$axios({
+        url: "/api-admin/user/checkLogin",
+        type: "get"
+      })
+        .then(res => {
+          this.$router.push({ path: "/home" });
+        })
+        .catch(err => {});
     }
   },
   created() {
+    this.judgeLogin();
+  },
+  mounted() {
     bus.$on("goto", path => {
       this.resetUser();
       this.$router.push({
@@ -70,7 +88,7 @@ export default {
 }
 
 .content {
-  width: 100%;
+  width: calc(~"100% - 250px");
   border-top: 1px solid #ddd;
 
   &-path {
@@ -82,7 +100,6 @@ export default {
 
   &-detail {
     box-sizing: border-box;
-    width: 100%;
     min-height: 600px;
     background-color: #eff1f3;
   }

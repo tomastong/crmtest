@@ -18,7 +18,13 @@
         <div class="password form-item">
           <div class="password-icon"></div>
           <div class="password-input">
-            <input type="password" v-model="user.password" placeholder="请输入密码" @keyup.enter="login" />
+            <input
+              type="password"
+              v-model="user.password"
+              placeholder="请输入密码"
+              autocomplete="off"
+              @keyup.enter="login"
+            />
           </div>
         </div>
         <div class="login-btn form-item" @click="login">登录</div>

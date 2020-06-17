@@ -16,6 +16,7 @@
     "qs": "^6.9.4",
     "sass-loader": "^8.0.2",
     "vue": "^2.6.11",
+    "vue-plugin-eventhub": "^1.0.0",
     "vue-router": "^3.3.2",
     "vuex": "^3.4.0",
     "vuex-persistedstate": "^3.0.1"

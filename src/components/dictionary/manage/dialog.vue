@@ -6,7 +6,7 @@
 
 <template>
   <el-dialog
-    title="字典添加"
+    :title="form.id ? '编辑字典' : '字典添加'"
     width="400px"
     :visible.sync="showDialog"
     :close-on-press-escape="false"

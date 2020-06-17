@@ -8,51 +8,49 @@ module.exports = function () {
   return {
     code: 0,
     msg: '登录成功',
-    router: [
-    {
+    router: [{
       id: 3,
       name: '系统管理',
       leaf: false,
       menuShow: true,
       parentId: 0,
-      iconCls: 'fa fa-desktop',
-      children: [
-        {
+      iconCls: 'iconfont iconwode',
+      children: [{
           path: '/dictionary/type',
           id: 231,
           name: '字典分类',
           leaf: true,
           menuShow: true,
           parentId: 3,
-          iconCls: 'fa fa-book',
-          children: [
-          {
-            path: '/api-admin/dictType/delete',
-            id: 234,
-            name: '删除',
-            leaf: false,
-            menuShow: true,
-            parentId: 231,
-            children: []
-          },
-          {
-            path: '/api-admin/dictType/save',
-            id: 232,
-            name: '新增',
-            leaf: false,
-            menuShow: true,
-            parentId: 231,
-            children: []
-          },
-          {
-            path: '/api-admin/dictType/update',
-            id: 233,
-            name: '编辑',
-            leaf: false,
-            menuShow: true,
-            parentId: 231,
-            children: []
-          }]
+          iconCls: '',
+          children: [{
+              path: '/api-admin/dictType/delete',
+              id: 234,
+              name: '删除',
+              leaf: false,
+              menuShow: true,
+              parentId: 231,
+              children: []
+            },
+            {
+              path: '/api-admin/dictType/save',
+              id: 232,
+              name: '新增',
+              leaf: false,
+              menuShow: true,
+              parentId: 231,
+              children: []
+            },
+            {
+              path: '/api-admin/dictType/update',
+              id: 233,
+              name: '编辑',
+              leaf: false,
+              menuShow: true,
+              parentId: 231,
+              children: []
+            }
+          ]
         },
         {
           path: '/dictionary/manage',
@@ -61,44 +59,44 @@ module.exports = function () {
           leaf: true,
           menuShow: true,
           parentId: 3,
-          iconCls: 'fa fa-book',
-          children: [
-          {
-            path: '/api-admin/dict/save',
-            id: 235,
-            name: '新增',
-            leaf: false,
-            menuShow: true,
-            parentId: 227,
-            children: []
-          },
-          {
-            path: '/api-admin/dict/delete',
-            id: 237,
-            name: '删除',
-            leaf: false,
-            menuShow: true,
-            parentId: 227,
-            children: []
-          },
-          {
-            path: '/dictionary/list',
-            id: 229,
-            name: '字典列表',
-            leaf: false,
-            menuShow: true,
-            parentId: 227,
-            children: []
-          },
-          {
-            path: '/api-admin/dict/update',
-            id: 236,
-            name: '编辑',
-            leaf: false,
-            menuShow: true,
-            parentId: 227,
-            children: []
-          }]
+          iconCls: '',
+          children: [{
+              path: '/api-admin/dict/save',
+              id: 235,
+              name: '新增',
+              leaf: false,
+              menuShow: true,
+              parentId: 227,
+              children: []
+            },
+            {
+              path: '/api-admin/dict/delete',
+              id: 237,
+              name: '删除',
+              leaf: false,
+              menuShow: true,
+              parentId: 227,
+              children: []
+            },
+            {
+              path: '/dictionary/list',
+              id: 229,
+              name: '字典列表',
+              leaf: false,
+              menuShow: true,
+              parentId: 227,
+              children: []
+            },
+            {
+              path: '/api-admin/dict/update',
+              id: 236,
+              name: '编辑',
+              leaf: false,
+              menuShow: true,
+              parentId: 227,
+              children: []
+            }
+          ]
         },
         {
           path: '/calculation/rules',
@@ -107,171 +105,171 @@ module.exports = function () {
           leaf: true,
           menuShow: true,
           parentId: 3,
-          iconCls: 'fa fa-book',
+          iconCls: '',
           children: []
         },
         {
-          path: '/admin/branch',
+          path: '/department/manage',
           id: 103,
           name: '部门管理',
           leaf: true,
           menuShow: true,
           parentId: 3,
-          iconCls: 'fa fa-coffee',
-          children: [
-          {
-            path: '/api-admin/dept/update',
-            id: 105,
-            name: '编辑',
-            leaf: false,
-            menuShow: true,
-            parentId: 103,
-            children: []
-          },
-          {
-            path: '/api-admin/dept/save',
-            id: 104,
-            name: '新增',
-            leaf: false,
-            menuShow: true,
-            parentId: 103,
-            children: []
-          },
-          {
-            path: '/api-admin/dept/list',
-            id: 131,
-            name: '列表',
-            leaf: false,
-            menuShow: true,
-            parentId: 103,
-            children: []
-          },
-          {
-            path: '/api-admin/dept/remove',
-            id: 106,
-            name: '删除',
-            leaf: false,
-            menuShow: true,
-            parentId: 103,
-            children: []
-          }]
+          iconCls: '',
+          children: [{
+              path: '/api-admin/dept/update',
+              id: 105,
+              name: '编辑',
+              leaf: false,
+              menuShow: true,
+              parentId: 103,
+              children: []
+            },
+            {
+              path: '/api-admin/dept/save',
+              id: 104,
+              name: '新增',
+              leaf: false,
+              menuShow: true,
+              parentId: 103,
+              children: []
+            },
+            {
+              path: '/api-admin/dept/list',
+              id: 131,
+              name: '列表',
+              leaf: false,
+              menuShow: true,
+              parentId: 103,
+              children: []
+            },
+            {
+              path: '/api-admin/dept/remove',
+              id: 106,
+              name: '删除',
+              leaf: false,
+              menuShow: true,
+              parentId: 103,
+              children: []
+            }
+          ]
         },
 
         {
-          path: '/admin/user',
+          path: '/user/manage',
           id: 6,
           name: '用户管理',
           leaf: true,
           menuShow: true,
           parentId: 3,
-          iconCls: 'fa fa-user',
-          children: [
-          {
-            path: '/api-admin/user',
-            id: 14,
-            name: '删除',
-            leaf: false,
-            menuShow: true,
-            parentId: 6,
-            children: []
-          },
-          {
-            path: '/api-admin/user/resetPwd',
-            id: 26,
-            name: '重置密码',
-            leaf: false,
-            menuShow: true,
-            parentId: 6,
-            iconCls: '',
-            children: []
-          },
-          {
-            path: '/api-admin/user',
-            id: 13,
-            name: '编辑',
-            leaf: false,
-            menuShow: true,
-            parentId: 6,
-            iconCls: '',
-            children: []
-          },
-          {
-            path: '/api-admin/user',
-            id: 12,
-            name: '新增',
-            leaf: false,
-            menuShow: true,
-            parentId: 6,
-            iconCls: '',
-            children: []
-          },
-          {
-            path: '/api-admin/user',
-            id: 24,
-            name: '批量删除',
-            leaf: false,
-            menuShow: true,
-            parentId: 6,
-            iconCls: '',
-            children: []
-          },
-          {
-            path: '/api-admin/user/disable',
-            id: 25,
-            name: '停用',
-            leaf: false,
-            menuShow: true,
-            parentId: 6,
-            children: []
-          }]
+          iconCls: '',
+          children: [{
+              path: '/api-admin/user',
+              id: 14,
+              name: '删除',
+              leaf: false,
+              menuShow: true,
+              parentId: 6,
+              children: []
+            },
+            {
+              path: '/api-admin/user/resetPwd',
+              id: 26,
+              name: '重置密码',
+              leaf: false,
+              menuShow: true,
+              parentId: 6,
+              iconCls: '',
+              children: []
+            },
+            {
+              path: '/api-admin/user',
+              id: 13,
+              name: '编辑',
+              leaf: false,
+              menuShow: true,
+              parentId: 6,
+              iconCls: '',
+              children: []
+            },
+            {
+              path: '/api-admin/user',
+              id: 12,
+              name: '新增',
+              leaf: false,
+              menuShow: true,
+              parentId: 6,
+              iconCls: '',
+              children: []
+            },
+            {
+              path: '/api-admin/user',
+              id: 24,
+              name: '批量删除',
+              leaf: false,
+              menuShow: true,
+              parentId: 6,
+              iconCls: '',
+              children: []
+            },
+            {
+              path: '/api-admin/user/disable',
+              id: 25,
+              name: '停用',
+              leaf: false,
+              menuShow: true,
+              parentId: 6,
+              children: []
+            }
+          ]
         },
         {
-          path: '/admin/role',
+          path: '/role/manage',
           id: 7,
           name: '角色管理',
           leaf: true,
           menuShow: true,
           parentId: 3,
-          iconCls: 'fa fa-paw',
-          children: [
-          {
-            path: '/api-admin/role',
-            id: 56,
-            name: '删除',
-            leaf: false,
-            menuShow: true,
-            parentId: 7,
-            children: []
-          },
-          {
-            path: '/api-admin/role',
-            id: 55,
-            name: '编辑',
-            leaf: false,
-            menuShow: true,
-            parentId: 7,
-            iconCls: '',
-            children: []
-          },
-          {
-            path: '/api-admin/role/batchRemove',
-            id: 62,
-            name: '批量删除',
-            leaf: false,
-            menuShow: true,
-            parentId: 7,
-            children: []
-          },
-          {
-            path: '/api-admin/role',
-            id: 15,
-            name: '新增',
-            leaf: false,
-            menuShow: true,
-            parentId: 7,
-            iconCls: '',
-            children: []
-          }]
+          iconCls: '',
+          children: [{
+              path: '/api-admin/role',
+              id: 56,
+              name: '删除',
+              leaf: false,
+              menuShow: true,
+              parentId: 7,
+              children: []
+            },
+            {
+              path: '/api-admin/role',
+              id: 55,
+              name: '编辑',
+              leaf: false,
+              menuShow: true,
+              parentId: 7,
+              iconCls: '',
+              children: []
+            },
+            {
+              path: '/api-admin/role/batchRemove',
+              id: 62,
+              name: '批量删除',
+              leaf: false,
+              menuShow: true,
+              parentId: 7,
+              children: []
+            },
+            {
+              path: '/api-admin/role',
+              id: 15,
+              name: '新增',
+              leaf: false,
+              menuShow: true,
+              parentId: 7,
+              iconCls: '',
+              children: []
+            }
+          ]
         }
       ]
     }],

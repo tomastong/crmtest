@@ -4,10 +4,9 @@
  * @date 2020-06-01
  */
 
-export default [
-  {
+export default [{
     path: '/',
-    redirect: '/login'
+    redirect: '/home'
   },
   {
     path: '/login',
@@ -31,16 +30,31 @@ export default [
         name: 'dictionaryManage',
         meta: ['系统管理', '字典管理'],
         component: () => import('@/pages/admin/dictionary/manage/index.vue')
+      },
+      {
+        path: '/calculation/rules',
+        name: 'calculationRules',
+        meta: ['系统管理', '计算规则'],
+        component: () => import('@/pages/admin/calculation/rules/index.vue')
+      },
+      {
+        path: '/department/manage',
+        name: 'departmentManage',
+        meta: ['系统管理', '部门管理'],
+        component: () => import('@/pages/admin/department/manage/index.vue')
+      },
+      {
+        path: '/user/manage',
+        name: 'userManage',
+        meta: ['系统管理', '用户管理'],
+        component: () => import('@/pages/admin/user/manage/index.vue')
+      },
+      {
+        path: '/role/manage',
+        name: 'roleManage',
+        meta: ['系统管理', '角色管理'],
+        component: () => import('@/pages/admin/role/manage/index.vue')
       }
     ]
-  },
-
-
-  // {path: '/admin/branch', name: 'branchList', component: () => import('@/pages/admin/branch/branchList.vue')},
-  // {path: '/admin/role', name: 'roleList', component: () => import('@/pages/admin/role/roleList.vue')},
-  // {path: '/admin/user', name: 'userList', component: () => import('@/pages/admin/user/userList.vue')},
-  // {path: '/department/list', name: 'profile', component: () => import('@/pages/admin/department/list.vue')},
-  // {path: '/calculation/rules', name: 'menuList', component: () => import('@/pages/admin/menu/menuList.vue')},
-
-  // {path: '/dictionary/list', name: 'dictionaryData', component: () => import('@/pages/admin/dictionaryData/list.vue')}
+  }
 ];

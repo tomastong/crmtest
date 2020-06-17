@@ -9,18 +9,20 @@ import store from './store';
 import App from './App.vue';
 import './plugins/element.js';
 
-import eventbus from '@/utils/eventbus';
+import eventhub from 'vue-plugin-eventhub';
 import axios from '@/utils/axios';
 import 'normalize.css';
 import '@/assets/fonts/font-awesome.min.css';
 import '@/assets/css/global.less';
+import '@/assets/fonts/dzgy/iconfont.css';
+
 
 Vue.config.productionTip = false;
 Vue.config.errorHandler = function (err, vm, info) {
   console.log(`Error: ${err.toString()}
 Info: ${info}`);
 };
-Vue.use(eventbus);
+Vue.use(eventhub);
 Vue.use(axios);
 new Vue({
   router,

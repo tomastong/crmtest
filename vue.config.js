@@ -19,23 +19,23 @@ module.exports = {
   },
   devServer: {
     port: 8080,
-    proxy: {
-      // proxy all requests starting with /api to jsonplaceholder
-      // '/api-admin': {
-      // target: 'http://119.3.84.244:8002', // 代理接口
-      // target: 'http://192.168.1.160:8005', // 代理接口
-      // changeOrigin: true
-      // pathRewrite: {
-      //     '^/api': '/mock' // 代理的路径
-      // }
+    // proxy: {
+    //   // proxy all requests starting with /api to jsonplaceholder
+    //   '/api-admin': {
+    //     target: 'http://119.3.84.244:8002', // 代理接口
+    //     // target: 'http://192.168.1.160:8005', // 代理接口
+    //     changeOrigin: true
+    //     // pathRewrite: {
+    //     //     '^/api': '/mock' // 代理的路径
+    //     // }
+    //   }
+    // },
+    before: function (app) {
+      app.use(require('./server/mockServer'));
+    },
+    overlay: {
+      warning: false,
+      error: true
     }
-  },
-  before: function (app) {
-    app.use(require('./server/mockServer'));
-  },
-  overlay: {
-    warning: false,
-    error: true
   }
-}
 };

@@ -6,7 +6,7 @@
 
 <template>
   <el-dialog
-    title="字典分类添加"
+    :title="form.id ? '编辑字典分类' : '字典分类添加'"
     width="400px"
     :visible.sync="showDialog"
     :close-on-press-escape="false"

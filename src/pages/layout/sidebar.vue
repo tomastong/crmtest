@@ -13,7 +13,7 @@
       @select="handleSelect"
     >
       <el-menu-item index="/home">
-        <i class="fa fa-home"></i>
+        <i class="iconfont icon-"></i>
         <span slot="title">首页</span>
       </el-menu-item>
       <!-- v-if="item.menuShow && !item.leaf" -->
@@ -88,7 +88,6 @@ export default {
 
 <style lang="less" scoped>
 .sidebar {
-  overflow: scroll;
   width: 250px;
   /deep/ .el-menu {
     border-right: 0;
@@ -100,6 +99,11 @@ export default {
     span {
       margin: 0 0 0 10px;
     }
+  }
+  /deep/ .el-menu-item:focus,
+  /deep/ .el-menu-item:hover {
+    background-color: #f00;
+    color: #fff;
   }
 }
 </style>
