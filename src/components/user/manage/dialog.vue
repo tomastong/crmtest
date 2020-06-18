@@ -63,10 +63,10 @@
       </el-form-item>
       <el-form-item prop="provinceId" label="所属区域" :label-width="formLabelWidth">
         <div class="area">
-          <el-select v-model="form.provinceId" placeholder="选择省份" @change="selectBD">
+          <el-select v-model="form.provinceId" placeholder="选择省份">
             <el-option v-for="pro in areas" :key="pro.deptId" :value="pro.deptId" :label="pro.name"></el-option>
           </el-select>
-          <el-select v-model="form.cityId" placeholder="选择城市" @change="selectBD">
+          <el-select v-model="form.cityId" placeholder="选择城市">
             <el-option
               v-for="city in cities"
               :key="city.deptId"
@@ -167,7 +167,7 @@ export default {
     }
   },
   events: {
-    editUserManage({
+    async editUserManage({
       userId,
       name,
       username,
@@ -181,31 +181,23 @@ export default {
       provinceId,
       cityId
     }) {
-      this.form = Object.assign(
-        {},
-        {
-          id: userId,
-          name,
-          username,
-          password,
-          deptId: deptIdList.split(",").map(item => +item),
-          roleId: +roleId,
-          sex,
-          email: mailbox,
-          birthday: birthDate,
-          provinceId
-        }
-      );
-      this.$nextTick(_ => {
-        // this.form.cityId = cityId;
-        this.$set(this.form, "cityId", cityId);
+      this.form = Object.assign({}, this.form, {
+        id: userId,
+        name,
+        username,
+        password,
+        deptId: deptIdList.split(",").map(item => +item),
+        roleId: +roleId,
+        sex,
+        email: mailbox,
+        birthday: birthDate,
+        provinceId
       });
+      await this.$nextTick();
+      this.form.cityId = cityId;
     }
   },
   methods: {
-    selectBD() {
-      this.$forceUpdate();
-    },
     getDept() {
       this.$axios({
         url: "/api-admin/dept/all",
