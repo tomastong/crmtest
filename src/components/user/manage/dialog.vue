@@ -181,6 +181,7 @@ export default {
       provinceId,
       cityId
     }) {
+      this.form.provinceId = provinceId;
       this.form = Object.assign({}, this.form, {
         id: userId,
         name,
@@ -191,10 +192,12 @@ export default {
         sex,
         email: mailbox,
         birthday: birthDate,
-        provinceId
+        cityId
       });
-      await this.$nextTick();
-      this.form.cityId = cityId;
+      // 这里之所以这么写，是因为watch中设置选provinceId后，把cityId置空了
+      // 可以上面先给provinceId赋值，然后在处理cityId赋值问题
+      // await this.$nextTick();
+      // this.form.cityId = cityId;
     }
   },
   methods: {
